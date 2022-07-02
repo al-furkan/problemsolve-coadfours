@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using  namespace  std;
+
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+
+#define ordered_set tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>
+
+#define faster  ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+#define sq(x)   (x)*(x)
+#define PI      acos(-1.0)
+#define all(x) x.begin(),x.end()
+#define nl      '\n'
+#define mod 1000000007
+typedef long long int ll;
+typedef unsigned long long int  llu;
+int main()
+{
+    ll n;
+    cin>>n;
+    while(n--)
+    {
+      int a1,b1,a2,b2,a3,b3;
+      cin>>a1>>b1>>a2>>b2>>a3>>b3;
+      ll ans = abs(a1-a2)+abs(b1-b2);
+      if(b1==b2&&b1==b3){
+        if(a3>=min(a1,a2)&&a3<=max(a1,a2))ans+=2;
+      }
+     else if(a1==a2&&a1==a3){
+        if(b3>=min(b1,b2)&&b3<=max(b1,b2))ans+=2;
+      }
+      cout<<ans<<endl;
+    }
+    return 0;
+}
